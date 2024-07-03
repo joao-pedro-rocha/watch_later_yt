@@ -64,7 +64,7 @@ def main():
             video_id = video_response['items'][0]['id']['videoId']
 
             with open('watch_later.txt', 'a') as file:
-                file.write(f'{BASE_URL}{video_id}\n')
+                file.write(f'{BASE_URL}{video_id}\n\n')
     except Exception as error:
         print('''!!! An unexpected error has occurred!
               More details:''')
