@@ -63,9 +63,10 @@ def main():
             video_response = video_request.execute()
             if video_response['items'][0]['id']['kind'] == 'youtube#video':
                 video_id = video_response['items'][0]['id']['videoId']
+                video_title = video_response['items'][0]['snippet']['title']
 
                 with open('watch_later.txt', 'a') as file:
-                    file.write(f'{BASE_URL}{video_id}\n\n')
+                    file.write(f'{video_title} - {BASE_URL}{video_id}\n\n')
     except Exception:
         print('!!! An unexpected error has occurred !!!')
 
